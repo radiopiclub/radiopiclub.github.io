@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Home
 ---
 ## RadioPi，Ham的树莓派懒人包
 
