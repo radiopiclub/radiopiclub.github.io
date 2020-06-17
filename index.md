@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: default
 ---
 ## RadioPi，Ham的树莓派懒人包
 
 ![radiopi-desktop](index.assets/radiopi-desktop.png)
+
+
 
 如果你想玩树莓派远程控制电台，但是又苦于Linux系统太繁琐，那你可以试试RadioPi。这是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件，对远程控制做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。
 
