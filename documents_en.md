@@ -28,7 +28,7 @@ RadioPi is a Hamradio Raspberry Pi OS image. You can flash it into a SD card, an
 
 RadioPi can help you to:
 - Control your rig, run FT8, log QSO, and upload to LoTW. 
-- Access your rig@home by your mobile phone, when you take a walk in a park.
+- Control your rig@home by your mobile phone, when you take a walk in a park.
 - Go to field operation without your laptop computer.
 
 
@@ -109,7 +109,7 @@ Before using RadioPi, you need to do some preparations:
 
 - The monitor, keyboard, and mouse.
 
-You can also use the RadioPi in "headless", without using a monitor, keyboard and mouse. RadioPi has been configured with SSH, VNC, Avahi services, and is optimized for remote access. This is the point of playing the Raspberry Pi. For this part, please refer to the Part 7: ["Remote Access RadioPi"](#7-remote-access-radiopi).
+You can also use the RadioPi in "headless", without using a monitor, keyboard and mouse. RadioPi has been configured with SSH, VNC, Avahi services, and is optimized for remote control. This is the point of playing the Raspberry Pi. For this part, please refer to the Part 7: ["Remote Access RadioPi"](#7-remote-control-radiopi).
 
 
 ## 5. Networking for RadioPi
@@ -181,89 +181,98 @@ We recommend you to keep a Wi-Fi network of your mobile phone's shared hotspot, 
 
 ## 6.  Find RadioPi in the LAN
 
-当你想实现从厨房或者浴室，控制阳台上的RadioPi和电台时，你要先知道RadioPi的局域网IP地址。以下介绍三种方法在局域网找到RadioPi。
+If you want to control your RadioPi on balcony from your kitchen or bathroom, you need to find the RadioPi's LAN IP address first. Here are three ways to find RadioPi on a LAN.
+
 
 ### 6.1 Find RadioPi on the router
 
-最简单方法是到路由器上看看分给它的IP地址是什么。RadioPi的默认主机名是小写的radiopi。找到它对应的IP。
+The simplest way is to login to your router, and find the list of devices.
+RadioPi's default hostname is **"radiopi"**. You can figure out which IP address is assigned to "radiopi". 
 
-![在路由器上找到radiopi对应的IP地址](/img/router_ip.png)
+![Find the IP address of radiopi on the router](/img/router_ip.png)
 
 ### 6.2 Scan IP address
 
-如果你无法登录路由器，还可以用IP扫描工具在局域网里扫出radiopi的IP地址。这里推荐的软件是：[IP Angry Scanner](https://angryip.org/download/)，它把你的电脑所在的局域网整个扫一遍，列出来结果。
+You can also use the IP scanning tool to figure out the radiopi's IP address in your LAN.
+The software recommended is: [IP Angry Scanner](https://angryip.org/download/), which scans your entire LAN of your computer and lists the results.
 
-![在Angry IP Scanner中，扫到radiopi主机的IP地址](/img/angryip-scan.png)
+![In Angry IP Scanner, list the IP address of the radiopi](/img/angryip-scan.png)
 
-它扫到了RadioPi的IP地址是192.168.32.209。
+It figures out the IP address of RadioPi is 192.168.32.209.
 
 
 ### 6.3  Access radiopi.local directly
 
-在支持mDNS的设备上，比如苹果的电脑、手机、iPad，可以直接用网址`radiopi.local`访问到RadioPi。
+On devices that support mDNS, such as Apple's Macbook, iPhones and iPads, you can directly access RadioPi using the URL `radiopi.local`.
+
+We configured Avahi service that supports mDNS (multicast DNS) protocol on RadioPi. In short, when RadioPi is connected to network, Avahi broadcasts its hostname on the LAN. RadioPi's default host name is lowercase **"radiopi"**, so its local URL is: radiopi.local.
+
+The following figure shows VNC Viewer as an example. You can enter radiopi.local directly in the address bar to access your RadioPi.
+
+![Entering radiopi.local directly in the address bar of VNC Viewer](/img/vnc-link-local.png)
 
 
-
-我们在RadioPi上配置了支持mDNS(多播域名)协议的Avahi服务。简言之，当RadioPi联网后，Avahi就在局域网内广播它的主机名，方便你找到它。RadioPi的默认主机名是小写的`radiopi`，所以它的局域网网址就是：`radiopi.local`。
-
-下图以VNC Viewer为例，在地址栏中直接输入radiopi.local即可访问。
-
-![在VNC Viewer地址栏直接输入radiopi.local](/img/vnc-link-local.png)
-
-| **在不同类型操作系统上的mDNS服务**                           |
+| **mDNS service on different operating systems**                           |
 | ------------------------------------------------------------ |
-| <sup>遗憾的是这种mDNS服务并不是所有操作系统的标准服务。<br /><br />**在苹果电脑或手机上使用Bonjour服务**<br />在苹果公司的设备上有Bonjour服务，它和Avahi一样支持mDNS协议。所以苹果的设备都可以直接访问radiopi.local。 <br /><br/>**在Windows上使用Bonjour服务**<br />微软的Windows系统中，默认是没有Avahi或者Bonjour服务的。有一个简单的方法：安装苹果公司的Bonjour打印服务程序，即可使Windows拥有类似的功能。Bonjour打印服务Windows版的下载地址：[https://support.apple.com/kb/DL999](https://support.apple.com/kb/DL999) <br /><br />**在linux系统上使用avahi服务**<br />在各种Linux类的电脑上，和树莓派一样要安装支持mDNS的服务avahi-daemon，过程这里不再赘述。<br /><br/>**在安卓手机上……**<br />安卓手机不在用户的操作层面提供mDNS服务。所以需要在路由器上查找，或者扫描局域网IP的方式，获取到radiopi的IP地址。 此外，RealVNC提供一种“云连接”的方式访问RadioPi。在完成设置之后，可以简化查找IP地址的过程。稍后会介绍。 </sup> |
+| <small>Unfortunately, mDNS service is not a standard service for all operating systems.<br /><br />**Use Bonjour on an Apple's devices**<br />There is the Bonjour service on Apple’s devices, which, like Avahi, supports the mDNS protocol. So Apple devices can directly access radiopi.local.<br /><br />**Use Bonjour service on Windows**<br />In Microsoft's Windows, there is no Avahi or Bonjour by default. However, You can install Apple's Bonjour Print Service. That will help to enable mDNS of your computer. The Download address of Bonjour Print Service for Windows is here: [https://support.apple.com/kb/DL999](https://support.apple.com/kb/DL999).<br /><br />**Use avahi service on linux system**<br />On various Linux systems, like the Raspberry Pi OS, the avahi-daemon service which supports mDNS should be installed.<br /><br />**On an Android phone...**<br />Android phones do not provide mDNS services in user's operating level. So you need to find it on your router or scan your LAN to get the radiopi IP address. In addition, RealVNC provides a "cloud connection" to access RadioPi. After some settings, finding RadioPi's IP address can be simplified. That will be introduced later.</small> |
 
-## 7. Remote Access RadioPi
 
-### 7.1 How to remote access
 
-把RadioPi和电台连接在一起，再通过VNC这类远程桌面软件，从另一处的电脑或者手机上对RadioPi进行操作，从而实现对电台的控制。远程控制有两种情形：
 
-- **局域网远程控制：**比如在家里，你拿着手机，在厨房或者浴室，对阳台上的RadioPi和电台实施“远程控制”。
-- **互联网远程控制：**从公园控制家里的RadioPi和电台，或者一个城市控制另外一个城市的RadioPi和电台，这需要借助互联网实现。
+## 7. Remote Control RadioPi
 
+### 7.1 How to remote control
+
+Connecting the RadioPi and your rig, and using the remote desktop sharing system such as VNC to control the RadioPi, from another computer or mobile phone. That's we called "remote control".
+
+There are two sences of remote control:
+
+- **Remote control via home LAN**: For example, controlling your RadioPi on balcony from your kitchen or bathroom.
+- **Remote control via Internet**: Controlling your RadioPi at home, from a park, or another city, which needs to be conneted to Internet, both your RadioPi and your accessing devices.
 
 
 ### 7.2 VNC (Virtual Network Computing)
 
-VNC是Virtual Network Computing的缩写，虚拟网络控制台。简言之，它类似QQ的“远程协助”，能把RadioPi“投射”到另外一台电脑上或手机上，实现远程操作。就像下边这张图表达的一样。
+VNC is a graphical desktop sharing system that allows you to remotely control the desktop interface of one computer (running VNC Server) from another computer or mobile device (running VNC Viewer). VNC Viewer transmits the keyboard and either mouse or touch events to VNC Server, and receives updates to the screen in return.
 
-![手机远程控制树莓派的示意图](/img/raspberry-pi-virtual.png)
+![Diagram of mobile phone remote control](/img/raspberry-pi-virtual.png)
 
-我们在RadioPi上配置好了VNC Server以及相关的服务。接下来还需要你在另外一台电脑或者手机上，安装VNC Viewer。
+We have configured VNC Server and related services on RadioPi. Next, you need to install VNC Viewer on another computer or mobile phone.
+
 
 #### 7.2.1 Download VNC Viewer:
 
 - [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/)
-- 对于安卓手机用户，国内的应用商店可能没有。推荐从RealVNC公司直接下载[.apk安装包](https://help.realvnc.com/hc/en-us/articles/360002762697)。
+- For Android's users, also can download the [.apk package from RealVNC](https://help.realvnc.com/hc/en-us/articles/360002762697).
+
+
+### 7.3 Remote Control RadioPi via LAN
+
+In the address bar of VNC Viewer, enter the IP address of RadioPi.
+
+
+![Enter the IP address of RadioPi in the address bar of VNC](/img/vnc-ip-address-2672600.png)
 
 
 
-### 7.3 Remote Access RadioPi via LAN
+When you are connecting RadioPi for the first time, VNC Viewer will give a security prompt. Clicking Continue.
 
-在VNC Viewer的地址栏，输入RadioPi的网址。
+![Security prompt](/img/vnc-checkid.png)
 
-![在VNC的地址栏输入RadioPi的IP地址](/img/vnc-ip-address-2672600.png)
-
-
-
-第一次与RadioPi建立连接时，VNC Viewer会有一个安全提示，选择Continue继续。
-
-![第一次连接VNC的安全提示](/img/vnc-checkid.png)接下来VNC Viewer会提示你输入登录radiopi.local的用户名和密码。我们用RadioPi的默认用户pi登录。
+Next, you need to enter the user name and password for logging in to RadioPi. The default are:
 
 - username：pi
 - password：radiopi599
 
-![输入登录RadioPi的用户名密码](/img/vnc-login.png)
+![Enter the user name and password](/img/vnc-login.png)
 
-然后你就会在VNC Viewer的窗口里看到RadioPi的桌面。你可以像操作普通的电脑一样操作它了。至此，你已经实现了局域网内的RadioPi远程控制。
+Then you will see the RadioPi desktop in the VNC Viewer window. You can operate it like an ordinary computer. At this point, you have controlled the RadioPi on LAN.
 
-![第一次登录到RadioPi的桌面](/img/vnc-logined.png)
+![Log in to the RadioPi desktop for the first time](/img/vnc-logined.png)
 
 
 
-### 7.4 Remote Access RadioPi via internet
+### 7.4 Remote Control RadioPi via internet
 
 如果想实现更远的(跨互联网)远程控制——比如从公园里控制家里的RadioPi——那就需要注册RealVNC提供**“云连接(Cloud Connect)”**服务。
 
