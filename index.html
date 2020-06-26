@@ -1,0 +1,54 @@
+---
+layout: home
+title: home
+permalink: "index.html"
+language: en
+---
+
+<img src="/img/radiopi-desktop.png" />
+
+
+
+
+<p>RadioPi is a Hamradio Raspberry Pi OS image. You can flash it into a SD card, and run it on a RPi computer directly.</p>
+
+<div>
+
+<h3>RadioPi is desgined to</h3>
+<ul>
+<li>Control your rig, run FT8, log QSO, and upload to LoTW. </li>
+<li>Control your rig at home, when you take a walk in a park. </li>
+<li>Go to field operation without your laptop computer. </li>
+</ul>
+</div>
+
+
+
+<div>
+	<h3>Software on RadioPi</h3>
+	<ul>
+	  {% for software in site.data.softwares %}
+		<li><b>{{ software.name }}</b> - {{ software.version }} - {{ software.dscription_en }}</li>
+	  {% endfor %}
+	</ul>
+</div>
+
+
+<div>
+	<h3>Features of RadioPi</h3>
+	<ul>
+		<li>chornyd for ntp service</li>
+		<li>non-ham softwares were removed</li>
+		<li>Mariadb ready for CQRLog, and the SSL bug was fixed</li>
+		<li>SSH, VNC, Avahi services were enabled</li>
+		<li>A hotspot "radiopi" was installed for field operation</li>
+	</ul>
+</div>
+
+
+
+<h2>RadioPi User Guide</h2>
+
+<p>For more infomation, Please read <a href="/en/documents.html"> RadioPi User Guide</a></p>
+
+

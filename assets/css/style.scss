@@ -1,7 +1,152 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize";
+@import "jekyll-theme-minimal";
+
+body {
+    padding-top: 1em;
+}
+
+/** Headline Style**/
+
+h2{ margin-top: 3em}
+
+/** Table Of Content Style **/
+ul.inline_toc,{
+    padding-left: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+ }
+
+ .inline_toc ul {
+ 	padding-left: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+ }
+
+ li.inline_toc {
+    padding-left: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+
+header {
+    z-index: 1000;
+    height: 90%;
+    overflow: auto;
+}
+
+code, pre {
+    font-size: 11px;
+}
+
+/**
+ * Site header
+ */
+.site-header {
+  border-bottom: 2px solid #424242;
+  border-top: 0;
+  min-height: 1.865 em;
+  line-height: 2.25 em;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  margin-bottom: 2em;
+}
+
+
+.site-nav {
+  position: absolute;
+  top: 9px;
+  right: 0.5 em;
+  background-color: #fdfdfd;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  text-align: right;
+
+  .nav-trigger {
+    display: none;
+    clear: both;
+  }
+
+  .menu-icon {
+    float: left;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+
+    > svg path {
+      fill: #999;
+    }
+  }
+
+  label[for="nav-trigger"] {
+    display: block;
+    float: left;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  input ~ .trigger {
+    clear: both;
+    display: none;
+  }
+
+  input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  .page-link {
+    color: #111;
+    line-height: 1.5em;
+    display: block;
+    padding: 5px 10px;
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: 770px) {
+    position: static;
+    border: none;
+    background-color: inherit;
+
+    label[for="nav-trigger"] {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    input ~ .trigger {
+      display: block;
+    }
+
+    .page-link {
+      display: inline;
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      margin-left: auto;
+    }
+  }
+}
+
+
+
+  

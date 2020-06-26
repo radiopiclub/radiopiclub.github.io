@@ -15,35 +15,25 @@
 
 
     <div class="wrapper">
+
     {% include navbar.html %}
 
+
       <header>
-        
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
-        
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        {% if site.github.is_project_page %}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {% endif %}
-
-        {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-        {% endif %}
+        <h4>Table of Content</h4>
+        {% include toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=6 %}
+        <br />  
 
       </header>
+
       <section>
+
 
       {{ content }}
 
-      {% include downloads.html %}
-
 
       {% include footer.html %}
-
+  
       </section>
 
 

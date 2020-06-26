@@ -1,0 +1,55 @@
+---
+layout: home
+title: home
+permalink: "/zh/index.html"
+language: zh
+---
+
+<img src="/img/radiopi-desktop.png" />
+
+<p>如果你想玩树莓派远程控制电台，但是又苦于Linux系统太繁琐，那你可以试试RadioPi。这是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件，对远程控制做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。</p>
+
+
+<div>
+	
+<h3>RadioPi能做：</h3>
+<ul>
+<li>控制电台，玩FT8，记通联日志，上传LOTW挣DXCC积分。</li>
+<li>一边在公园遛弯儿，一边用手机遥控家里电台。</li>
+<li>去野外通联不用带笔记本电脑了。</li>
+</ul>
+</div>
+
+
+
+<div>
+	<h3>RadioPi预装：</h3>
+	<ul>
+	  {% for software in site.data.softwares %}
+		<li><b>{{ software.name }}</b> - {{ software.version }} - {{ software.dscription_zh }}</li>
+	  {% endfor %}
+	</ul>
+</div>
+
+
+
+
+
+<div>
+	<h3>RadioPi还有：</h3>
+	<ul>
+		<li>多语言支持的界面，预装谷歌拼音输入法。</li>
+		<li>预装时间同步软件、GPS的驱动。 </li>
+		<li>精简了跟HAM无关的软件。</li>
+		<li>配置好了CQRLog的数据库，修订了它上传LOTW的Bug。</li>
+		<li>配置好了SSH、VNC、Avahi服务。</li>
+		<li>预存了一个叫radiopi的Wi-Fi连接，以便于野外通联。</li>
+	</ul>
+</div>
+
+
+
+<h2>RadioPi使用指南</h2>
+
+<p>详细使用说明，请参考<a href="./documents.html">《RadioPi使用说明》</a></p>
+
