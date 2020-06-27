@@ -76,8 +76,8 @@ RadioPi is configured to automatically login to the desktop after booting, which
 ## 3. Download
 
 **中文版下载地址：**[https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA](https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA)
-<br />**提取码：**`02e7`
-<br/>**SHA-256：**`99ab3ec6125cc07d878746d810a1d74db3db7bada44e5373ae1b7681da3e07f3`
+<br />**提取码：**02e7
+<br/>**SHA-256：**99ab3ec6125cc07d878746d810a1d74db3db7bada44e5373ae1b7681da3e07f3
 
 
 
@@ -315,7 +315,7 @@ After RadioPi is connected to the Internet:
 ## 9. Safety tips
 
 - Most of the applications on RadioPi are based on "Hamlib". Which has been developed for two decades. It is successful and stable. But these applications are still being updated. So no one guarantees they will work perfectly with every application and every rig.
-- The hardware of Raspberry Pi is not designed for RF conditions specifically. So using the Raspberry Pi to control radio devices has certain risks. When you use it to work with a high-power, or unbalanced antenna and feedline, the poor SWR, poor balance and poor counterpoise can all cause radio frequency interference to the Raspberry Pi and your rigs and peripherals.
+- The hardware of Raspberry Pi is not designed for RF conditions specifically. So using the Raspberry Pi to control radio devices has certain risks. When you use it to work with a high-power, or unbalanced antenna and feedline, the poor SWR, poor balance, insufficient counterpoise can all cause RFI to your Raspberry Pi, your rigs and peripherals.
 - The radio devices we have tested are limited, mainly including FT-817/818, IC-7000/7300, D4D kit, etc. The antennas we used are end-feeding, random long wires, PAC12, G5RV jr, and even small magnetic loop. The above experiences happened during Both the QRO and QRP operations.
 - Therefore, it is very necessary to treat those issues seriously. Especially when you are operating an remote radio devices.
 - Solving these problems is also one of the fun of hamradio.
