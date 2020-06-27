@@ -1,6 +1,6 @@
 ---
 layout: document
-title: RadioPi使用说明
+title: RadioPi User Guide
 permalink: "/en/documents.html"
 author: BG6LH
 version: 20200621
@@ -212,8 +212,8 @@ The following figure shows VNC Viewer as an example. You can enter radiopi.local
 ![Entering radiopi.local directly in the address bar of VNC Viewer](/img/vnc-link-local.png)
 
 
-| **mDNS service on different operating systems**                           |
-| ------------------------------------------------------------ |
+| **mDNS service on different operating systems** |
+| ----------------------------------------------- |
 | <small>Unfortunately, mDNS service is not a standard service for all operating systems.<br /><br />**Use Bonjour on an Apple's devices**<br />There is the Bonjour service on Apple’s devices, which, like Avahi, supports the mDNS protocol. So Apple devices can directly access radiopi.local.<br /><br />**Use Bonjour service on Windows**<br />In Microsoft's Windows, there is no Avahi or Bonjour by default. However, You can install Apple's Bonjour Print Service. That will help to enable mDNS of your computer. The Download address of Bonjour Print Service for Windows is here: [https://support.apple.com/kb/DL999](https://support.apple.com/kb/DL999).<br /><br />**Use avahi service on linux system**<br />On various Linux systems, like the Raspberry Pi OS, the avahi-daemon service which supports mDNS should be installed.<br /><br />**On an Android phone...**<br />Android phones do not provide mDNS services in user's operating level. So you need to find it on your router or scan your LAN to get the radiopi IP address. In addition, RealVNC provides a "cloud connection" to access RadioPi. After some settings, finding RadioPi's IP address can be simplified. That will be introduced later.</small> |
 
 
@@ -289,45 +289,41 @@ When each device logged in for the first time, RealVNC will require a verificati
 
 ![VNC Viewer window after establishing a cloud connection](/img/vnc-teambook.png)
 
-
-
 ## 8. Advanced guide: RadioPi for field operation
 
-终于说到了野外通联。无头的RadioPi和手机或者Pad配合起来，可以完全取代笔记本电脑。
+Finally, it comes to field operation. 
 
-我们仍然要依赖VNC提供的服务，这意味着还要让RadioPi联网。野外最佳的联网手段，就是用手机共享一个Wi-Fi热点。所以我们在RadioPi里预先保存了一个叫“radiopi”的无线网络连接：
+A headless RadioPi could replace a laptop totaly. You still have to rely on VNC, which means you have to let RadioPi to connet to Internet. 
+
+The best way to getting internet connection in the field is sharing a hotspot on you mobile phone. So we pre-saved a wireless network connection called "radiopi" in RadioPi:
 
 - ssid: radiopi
 - psk: radiopi599
 - key_mgmt：WPA-PSK
 
-只要你在手机上共享一个叫“radiopi”的热点，把密码设置为：radiopi599，RadioPi开机就会自动连接上来。
+When you are sharing a Wi-Fi hotspot named “radiopi” on your phone, setting the password to "radiopi599", and encryption method to "WPA-PSK", the RadioPi will automatically connect it after power on. 
 
-在iPhone、iPad上，共享热点的名称就是它的主机名。需要在“设置/通用/关于本机”中，把名称改成radiopi。
+On iPhone and iPad, the name of the shared hotspot is its hostname. You need to change it to radiopi in “Settings/General/About/Name”.
 
-
-
-RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安卓手机用户可以访问“云连接”地址簿里的RadioPi。
-
-
+After RadioPi is connected to the Internet:
+- iPhone and iPad users can access VNC Viewer by the hostname "radiopi.local" directly.
+- Android phone users can access RadioPi in the "Cloud Connection" address book.
 
 ![a go-pack of RadioPi and YEASU FT-818](/img/ft818_gopack.jpg)
 
 
-
 ## 9. Safety tips
 
-- RadioPi上的软件大部分基于Hamlib开源工具库，已经发展了二十年，成功且稳定。但是这些软件目前仍在更新，所以没人保证它们和每一个软件、每一个电台都能有完美的配合。
-- 树莓派的硬件并非专门为射频工况设计，所以使用树莓派控制电台有一定的风险。当你用它和大功率电台、非平衡天馈系统一起工作时，不良的驻波、不佳的平衡与接地，都有可能对树莓派、电台及周边设备带来射频干扰。
-- 我们使用过的电台有限，主要包括过FT-817/818、IC-7000/7300、D4D等，使用的天线包括端馈的长线、PAC12、小G5RV、甚至小环天线。无论是QRO还是QRP操作，都有过上述的经历。
-- 所以认真对待平衡、接地、驻波等问题是非常必要的，尤其在远程操作无人值守的电台时更要注意这些问题。
-- 解决这些问题也是玩业余无线电的乐趣之一。
-
+- Most of the applications on RadioPi are based on "Hamlib". Which has been developed for two decades. It is successful and stable. But these applications are still being updated. So no one guarantees they will work perfectly with every application and every rig.
+- The hardware of Raspberry Pi is not designed for RF conditions specifically. So using the Raspberry Pi to control radio devices has certain risks. When you use it to work with a high-power, or unbalanced antenna and feedline, the poor SWR, poor balance and poor counterpoise can all cause radio frequency interference to the Raspberry Pi and your rigs and peripherals.
+- The radio devices we have tested are limited, mainly including FT-817/818, IC-7000/7300, D4D kit, etc. The antennas we used are end-feeding, random long wires, PAC12, G5RV jr, and even small magnetic loop. The above experiences happened during Both the QRO and QRP operations.
+- Therefore, it is very necessary to treat those issues seriously. Especially when you are operating an remote radio devices.
+- Solving these problems is also one of the fun of hamradio.
 
 
 ## 10. Agreement
 
-- 下载和使用RadioPi镜像表示你已同意自行承担使用它的风险和责任。
-- 请确保自己在法律法规许可范围内操作计算机、无线电设备和互联网。
-- RadioPi 镜像遵循“[创作共享 署名-相同方式共享 CC BY-SA 协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)”。
+- Downloading and using the RadioPi image means that you have agreed to take the risks and responsibilities of using it by yourself.
+- RadioPi is released under a Creative Commons [CC BY-SA (Attribution-ShareAlike 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
 
