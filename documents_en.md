@@ -109,7 +109,7 @@ Before using RadioPi, you need to do some preparations:
 
 - The monitor, keyboard, and mouse.
 
-You can also use the RadioPi in "headless", without using a monitor, keyboard and mouse. RadioPi has been configured with SSH, VNC, Avahi services, and is optimized for remote control. This is the point of playing the Raspberry Pi. For this part, please refer to the Part 7: ["Remote Access RadioPi"](#7-remote-control-radiopi).
+You can also use the RadioPi in "headless", without using a monitor, keyboard and mouse. RadioPi has been configured with SSH, VNC, Avahi services, and is optimized for remote control. This is the point of playing the Raspberry Pi. For this part, please refer to the Part 7: ["Remote Control RadioPi"](#7-remote-control-radiopi).
 
 
 ## 5. Networking for RadioPi
@@ -274,22 +274,20 @@ Then you will see the RadioPi desktop in the VNC Viewer window. You can operate 
 
 ### 7.4 Remote Control RadioPi via internet
 
-如果想实现更远的(跨互联网)远程控制——比如从公园里控制家里的RadioPi——那就需要注册RealVNC提供**“云连接(Cloud Connect)”**服务。
+If you want to control the RadioPi at home when you are woalking in a park, you need to register RealVNC's "Cloud Connection" service.
 
-![通过互联网访问家里的VNC Server 取自realvnc.com](/img/get-connected-internet-1.png)
+![Access the VNC Server at home via the Internet from realvnc.com](/img/get-connected-internet-1.png)
+
+Before going to the park, you need to complete the following steps :
+
+- Visiting the website [https://manage.realvnc.com](https://manage.realvnc.com) to register a RealVNC account.
+- Login to RadioPi's VNC Server,  by this account.
+- Login to VNC Viewer on your mobile phone,  by this account.
+
+When each device logged in for the first time, RealVNC will require a verification by email. After the verification, the remote RadioPi will appear in the address book of VNC Viewer. You can just click it directly when you access it next time.
 
 
-你需要在去公园之前，要完成以下操作：
-
-- 访问网站 [https://manage.realvnc.com](https://manage.realvnc.com) ，注册一个RealVNC账号。
-- 在RadioPi的VNC Server上登录这个账号。
-- 在手机的VNC Viewer上也登录这个账号。
-
-
-
-每台设备**第一次登录**时，RealVNC都会要求用电子邮件进行安全验证。验证完之后，远程的RadioPi就会出自动现在VNC Viewer的地址簿中，下次访问时直接点击它就好。
-
-![建立云连接之后的VNC Viewer窗口](/img/vnc-teambook.png)
+![VNC Viewer window after establishing a cloud connection](/img/vnc-teambook.png)
 
 
 
