@@ -82,10 +82,7 @@ RadioPi is configured to automatically login to the desktop after booting, which
 
 ## 3. Download
 
-**中文版下载地址：**[https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA](https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA)
-<br />**提取码：**02e7
-<br/>**SHA-256：**99ab3ec6125cc07d878746d810a1d74db3db7bada44e5373ae1b7681da3e07f3
-
+{% include downloads.html %}
 
 
 ## 4. Preparation before use
