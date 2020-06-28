@@ -26,7 +26,11 @@ language: zh
 	<h3>RadioPi预装：</h3>
 	<ul>
 	  {% for software in site.data.softwares %}
-		<li><b>{{ software.name }}</b> - {{ software.version }} - {{ software.dscription_zh }}</li>
+		<li><b>{{ software.name }}</b> - {{ software.version }} - 
+		    {% for description in software.descriptions %}
+		      {{ description.zh }}
+		    {% endfor %}
+		</li>
 	  {% endfor %}
 	</ul>
 </div>

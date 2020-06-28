@@ -1,7 +1,7 @@
 ---
 layout: home
 title: home
-permalink: "index.html"
+permalink: /index.html
 language: en
 ---
 
@@ -22,11 +22,16 @@ language: en
 
 
 
+
 <div>
 	<h3>Software on RadioPi</h3>
 	<ul>
 	  {% for software in site.data.softwares %}
-		<li><b>{{ software.name }}</b> - {{ software.version }} - {{ software.dscription_en }}</li>
+		<li><b>{{ software.name }}</b> - {{ software.version }} - 
+		    {% for description in software.descriptions %}
+		      {{ description.en }}
+		    {% endfor %}
+		</li>
 	  {% endfor %}
 	</ul>
 </div>

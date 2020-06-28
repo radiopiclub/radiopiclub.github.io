@@ -1,14 +1,12 @@
-title: RadioPi Club
-email: askom@radiopi.club
+title:  RadioPi Club
+email:  askom@radiopi.club
 logo: /assets/img/radiopi-logo.png
-description: Hamradio Raspberry Pi OS for dummies.
+description:  Hamradio Raspberry Pi OS for dummies.
 show_downloads: true
 google_analytics: UA-170516589-1
-theme: jekyll-theme-minimal
+theme:  jekyll-theme-minimal
 
-date_format: "%F"
-
+date_format:  "%F"
 timezone: Asia/Shanghai
-
 plugins:
  - jekyll-seo-tag
