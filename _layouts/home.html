@@ -34,6 +34,12 @@
 
       {{ content }}
 
+    {% if page.language == "zh" %}
+      <h2>下载地址：</h2>
+    {% else %}
+      <h2>Download:</h2>
+    {% endif %}
+    
       {% include downloads.html %}
 
 

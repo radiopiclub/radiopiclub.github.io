@@ -1,0 +1,41 @@
+# The softwares preinstalled in RadioPi
+
+- name: WSJT-X
+  version: 2.2.2
+  dscription_zh: 已中文支持
+  dscription_en: The extreme weak-signal communication software
+
+- name: JTDX
+  version: 2.1.0-RC150
+  dscription_zh: 可选中文界面
+  dscription_en: More features than WSJT-X
+
+- name: TQSL
+  version: 2.4.3
+  dscription_zh: 已中文支持
+  dscription_en: The LoTW clinet
+
+- name: CQRLOG
+  version: 2.3.0
+  dscription_zh: Linux世界最好用的日志软件
+  dscription_en: The best Log software in Linux world
+
+- name: GQRX
+  version: 5.11.3
+  dscription_zh: 软件无线电接收
+  dscription_en: SDR software
+
+- name: GNU Radio Companion
+  version: 3.7.13.4
+  dscription_zh: 软件无线电工具包 
+  dscription_en: SDR tools
+
+- name: VNC Server
+  version: 6.7.1
+  dscription_zh: 远程控制服务
+  dscription_en: To control your rig remotely by VNC
+
+- name: PulseAudio Preferences
+  version: 1.1
+  dscription_zh: 附加的音频配置工具，以便于监听WSJT工作
+  dscription_en: Help to simultaneous line-output, for monitoring transmit

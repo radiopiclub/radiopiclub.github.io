@@ -1,13 +1,3 @@
----
-layout: document
-title: RadioPi使用说明
-permalink: "/zh/documents.html"
-author: BG6LH
-version: 20200621
-language: zh
-
----
-
 # RadioPi使用说明
 
 {% if page.version and page.author %}
@@ -56,7 +46,11 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 | ---- | ---- | ---- |
 {{ "" }}
 {%- for software in site.data.softwares -%}
- {{ software.name }} | {{ software.version }} | {{ software.dscription_zh }} |
+| {{ software.name }} | {{ software.version }} |
+    {%- for description in software.descriptions -%}
+      {{ description.zh }}
+    {%- endfor -%}
+|
 {% endfor %}
 
 

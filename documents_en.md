@@ -38,11 +38,18 @@ RadioPi can help you to:
 The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to make it as clean as the official image. 
 
 ### 2.1 Softwares on RadioPi
-<ul>
-{% for software in site.data.softwares %}
-<li><b>{{ software.name }}</b> - {{ software.version }} - {{ software.dscription_en }}</li>
+
+| Application | Version | Description |
+| ---- | ---- | ---- |
+{{ "" }}
+{%- for software in site.data.softwares -%}
+| {{ software.name }} | {{ software.version }} |
+    {%- for description in software.descriptions -%}
+      {{ description.en }}
+    {%- endfor -%}
+|
 {% endfor %}
-</ul>
+
 
 You need to complete some the power-on settings by yourself, such as the connection with your rig, call sign and LoTW account and so on. We hope that RadioPi can meet Ham's requirement as stable as possible, so some software is up to date, some are stable. You are welcome to recommend better software, we will pre-install it in future radiopi versions.
 
@@ -94,7 +101,7 @@ Before using RadioPi, you need to do some preparations:
 ### 4.2 Card writing softwares 
 
 - On Windows, [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/) is recommended.
-- On MacOS下, [balenaEtcher](https://www.balena.io/etcher/) is recommended.
+- On MacOS, [balenaEtcher](https://www.balena.io/etcher/) is recommended.
 
 ### 4.3 Raspberry Pi
 
