@@ -320,13 +320,6 @@ RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安�
 - 在WSJT-X等软件的“设置/音频”中，将音频输出设备选为“combined”即可。
 
 
-## 时间同步？？？？？？？？
-
-树莓派没有硬件RTC时钟，它使用timedatectl来进行ntp协议的时间同步。
-RadioPi使用chrony替代nptd执行时间同步。在有互联网连接时，chrony可以从ntp时间服务器获取时间。没有互联网时，比如在野外，chrony可以从USB GPS获取时间。
-
-
-
 ## 10. 安全提示
 
 - RadioPi上的软件大部分基于Hamlib开源工具库，已经发展了二十年，成功且稳定。但是这些软件目前仍在更新，所以没人保证它们和每一个软件、每一个电台都能有完美的配合。
