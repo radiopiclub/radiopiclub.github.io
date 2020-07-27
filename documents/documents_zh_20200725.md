@@ -317,7 +317,7 @@ RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安�
 - 在RadioPi的开始菜单/首选项中打开PulseAudio Preferences(PulseAudio属性)。
 - 选择 Simultaneous Output(同步输出)。
 - 勾选“在所有本地声卡中为模拟输出添加虚拟(V)输出设备”。
-- 在WSJT-X等软件的“设置/音频”中，将音频输出设备选为“combined”即可。
+- 重启WSJT-X等软件，将音频输出设备选为“combined”即可。
 
 
 ## 10. 安全提示
