@@ -16,7 +16,7 @@
   version: 2.4.3
   descriptions:
     - zh: 已中文支持
-      en: The LoTW clinet
+      en: The LoTW client
 
 - name: CQRLOG
   version: 2.3.0

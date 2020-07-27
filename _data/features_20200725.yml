@@ -1,0 +1,34 @@
+# The features of RadioPi
+
+- feature:
+  - zh: 默认用户：pi <br />密码：radiopi599
+    en: "Default user: pi<br />Password: radiopi599"
+
+- feature:
+  - zh: 默认英文界面，中文支持，预装谷歌拼音输入法。
+    en: Setting Locale to en_US.UTF8. Chinese Language also was supported. fcitx fcitx-googlepinyin input method are installed
+
+- feature:
+  - zh: 预装时间同步软件、GPS的驱动。 
+    en: chornyd and gpsd for timing service
+
+- feature:
+  - zh: 精简了跟HAM无关的软件。压缩后的镜像文件只有1.38GB
+    en: non-ham softwares were removed。the zipped distro IMG is only 1.38GB
+
+- feature:
+  - zh: 整合了丰富的软件无线电工具GNU Radio，安装了hackrf、gr-osmosdr等支持包，便于更有趣的软件无线电测试。
+    en: Gnuradio and SDR libs are installed, such as hackrf, gr-osmosdr and so on. it is ready for more fun of SDR testings
+
+- feature:
+  - zh: 配置好了SSH、VNC、Avahi服务，以便于野外操作
+    en: SSH, VNC, Avahi services were enabled for field operation
+
+- feature:
+  - zh: 预存了一个叫radiopi的Wi-Fi连接，以便于野外通联。
+    en: A hotspot "radiopi" was installed for field operation
+
+- feature:
+  - zh: 增加了一个1280x1024@60Hz的分辨率，这个对iPad使用VNC登录RadioPi来说很友好。
+    en: A 1280x1024@60Hz screen resolution was installed. it's better for iPad's VNC to remote control RadioPi.
+    

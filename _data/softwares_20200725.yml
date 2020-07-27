@@ -1,0 +1,85 @@
+# The softwares preinstalled in RadioPi
+
+- name: WSJT-X
+  version: 2.2.2
+  descriptions:
+  - zh: FT8等极弱信号通讯工具
+    en: The extreme weak-signal communication software
+
+- name: JTDX
+  version: 2.1.0-RC150
+  descriptions:
+  - zh: 多了些实用功能的混改版WSJT-X
+    en: More features than WSJT-X
+
+- name: TQSL
+  version: 2.4.3
+  descriptions:
+    - zh: ARRL的LoTW SQL软件
+      en: The ARRL LoTW QSL client
+
+- name: Xlog
+  version: 2.0.14
+  descriptions:
+    - zh: 一个轻量级的日志软件
+      en: A light weight logging program
+
+- name: Fldigi
+  version: 4.1.01
+  descriptions:
+    - zh: 数字模式通讯工具
+      en: Amateur Radio in Digital Modes 
+
+- name: CHIRP
+  version: daily20190104
+  descriptions:
+    - zh: 强大的电台写频编程工具，适用于Yaesu、Icom、Kenwood、宝锋、TYT等绝大多数电台。
+      en: Programming amateur radios, supporting a large number of manufacturers and models, such as Yaesu, Icom, Kenwood, Baofeng, TYT and so on.
+
+- name: QSSTV
+  version: 9.2.6
+  descriptions:
+    - zh: 慢扫描电视收发工具
+      en: Receiving and transmitting SSTV and HAMDRM(DSSTV)
+
+- name: GNU Radio Companion
+  version: 3.7.13.4
+  descriptions:
+    - zh: 免费开源的软件无线电开发工具包 
+      en: GNU Radio is a free & open-source software development toolkit that provides signal processing blocks to implement software radios.
+
+- name: GQRX
+  version: 2.11.5
+  descriptions:
+    - zh: 基于GNU Radio的 SDR接收机软件
+      en: Gqrx is an open source software defined radio receiver (SDR) powered by the GNU Radio and the Qt graphical toolkit.
+
+- name: CubicSDR
+  version: 0.2.5
+  descriptions:
+    - zh: 一个跨平台的SDR接收工具
+      en: Cross-platform SDR application
+
+- name: Direwolf
+  version: 1.4
+  descriptions:
+    - zh: 软件声卡调制解调器/TNC和APRS编解码器
+      en: A software "soundcard" modem/TNC and APRS en/decoder
+
+- name: Gpredict
+  version: 2.3-33-gca42d22-1
+  descriptions:
+    - zh: 实时卫星追踪
+      en: A real-time satellite tracking and orbit prediction application
+
+- name: VNC Server
+  version: 6.7.2
+  descriptions:
+    - zh: 远程控制服务
+      en: To remote control your rig remotely by VNC
+
+- name: PulseAudio Preferences
+  version: 1.1
+  descriptions:
+    - zh: 附加的音频同步配置工具，以便于监听WSJT-X工作
+      en: For simultaneous line-output, and transmit monitoring.

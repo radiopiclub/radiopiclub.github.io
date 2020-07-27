@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi User Guide
-permalink: "/en/documents.html"
+permalink: "/en/documents-20200605.html"
 author: BG6LH
-version: 20200621
+version: 20200605
 language: en
 
 ---
@@ -42,7 +42,7 @@ The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to ma
 | Application | Version | Description |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares -%}
+{%- for software in site.data.softwares_20200605 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
       {{ description.en }}
@@ -56,11 +56,12 @@ You need to complete some the power-on settings by yourself, such as the connect
 
 ### 2.2 Configuration
 
-- Removed non-ham softwares
-- Mariadb for CQRLog, and the SSL bug was fixed
-- SSH, VNC, Avahi services were enabled
-- A hotspot "radiopi" was installed for field operation
-- Chorny for ntp service
+{% for features in site.data.features_20200605 %}
+	{%- for feature in features.feature -%}
+- {{ feature.en }}
+	{%- endfor %}
+{% endfor %}
+
 
 
 ### 2.3 Default username and password of RadioPi
@@ -82,7 +83,7 @@ RadioPi is configured to automatically login to the desktop after booting, which
 
 ## 3. Download
 
-{% include downloads.html %}
+{% include downloads_20200605.html %}
 
 
 ## 4. Preparation before use

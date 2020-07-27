@@ -1,0 +1,25 @@
+# The features of RadioPi
+
+- feature:
+  - zh: 中文界面，预装谷歌拼音输入法。
+    en: Setting Locale to en_US.UTF8, fcitx fcitx-googlepinyin input method are installed
+
+- feature:
+  - zh: 预装时间同步软件、GPS的驱动。 
+    en: chornyd for ntp service
+
+- feature:
+  - zh: 精简了跟HAM无关的软件。
+    en: non-ham softwares were removed
+
+- feature:
+  - zh: 配置好了CQRLog的数据库，修订了它上传LOTW的Bug。
+    en: Mariadb ready for CQRLog, and the SSL bug was fixed
+
+- feature:
+  - zh: 配置好了SSH、VNC、Avahi服务。
+    en: SSH, VNC, Avahi services were enabled
+
+- feature:
+  - zh: 预存了一个叫radiopi的Wi-Fi连接，以便于野外通联。
+    en: A hotspot "radiopi" was installed for field operation

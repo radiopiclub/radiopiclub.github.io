@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi使用说明
-permalink: "/zh/documents.html"
+permalink: "/zh/documents-20200605.html"
 author: BG6LH
-version: 20200621
+version: 20200605
 language: zh
 
 ---
@@ -34,26 +34,16 @@ language: zh
 
 
 
-## 2. RadioPi下载
-
-{% include downloads.html %}
-
-如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
-
-注意：刚下载的RaidoPi镜像是一个zip压缩包，烧卡之前要先解压缩，得到一个后缀是.img的文件。这个就是RadioPi镜像文件。
-
-
-
-## 3. RadioPi的特色
+## 2. RadioPi的特色
 
 RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是有洁癖的工程师，努力把它做的跟官方镜像一样干净，除了HAM常用的软件，别的都没装。
 
-### 3.1 预装的软件
+### 2.1 预装的软件
 
 | 软件 | 版本 | 简介 |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares -%}
+{%- for software in site.data.softwares_20200605 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
       {{ description.zh }}
@@ -66,23 +56,21 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 
 **RadioPi还做了：**
 
-- 中文化的界面，预装谷歌拼音输入法。
-- 预装时间同步软件、GPS的驱动。
-- 精简了跟HAM无关的软件。
-- 配置好了CQRLog的数据库，修订了它上传LOTW的Bug。
-- 配置好了SSH、VNC、Avahi服务。
-- 预存了一个叫radiopi的Wi-Fi连接，以便于野外通联。
+{% for features in site.data.features_20200605 %}
+	{%- for feature in features.feature -%}
+- {{ feature.zh }}
+	{%- endfor %}
+{% endfor %}
 
 
-
-### 3.2 RadioPi的默认用户名和密码
+### 2.2 RadioPi的默认用户名和密码
 
 - 用户名：pi
 - 密码：radiopi599
 
 
 
-### 3.3 RadioPi的默认主机名
+### 2.3 RadioPi的默认主机名
 
 - 主机名：radiopi
 
@@ -91,6 +79,15 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 RadioPi配置了自动广播主机名的Avahi服务，你可以在支持mDNS协议的其它设备上直接访问radiopi.local找到它。详情请参考《无头操作RadioPi》。
 
 我们把RadioPi设置为开机自动登录到桌面，这是为VNC远程控制做的一个优化。第一次登录后，建议你立刻修改用户pi的密码。
+
+
+## 3. RadioPi下载
+
+{% include downloads_20200605.html %}
+
+如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
+
+注意：刚下载的RaidoPi镜像是一个zip压缩包，烧卡之前要先解压缩，得到一个后缀是.img的文件。这个就是RadioPi镜像文件。
 
 
 

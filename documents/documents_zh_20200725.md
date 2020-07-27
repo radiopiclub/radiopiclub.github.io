@@ -1,3 +1,13 @@
+---
+layout: document
+title: RadioPi使用说明
+permalink: "/zh/documents-20200725.html"
+author: BG6LH
+version: 20200725
+language: zh
+
+---
+
 # RadioPi使用说明
 
 {% if page.version and page.author %}
@@ -9,7 +19,7 @@
 
 ![radiopi-desktop](/img/radiopi-desktop.png)
 
-如果你想玩树莓派远程控制电台，但是又苦于Linux系统太繁琐，那你可以试试RadioPi。这是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件，对远程控制做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。
+如果你想玩树莓派远程控制电台，但是又苦于Linux系统太繁琐，那你可以试试RadioPi。这是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件，并且针对<b>“远程控制”</b>和<b>“野外操作”</b>做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。
 
 *（为简化表达，接下来我们把运行RadioPi的树莓派电脑简称为RadioPi。）*
 
@@ -23,29 +33,34 @@
 我们三个搞互联网的HAM，BG6LH、BG1TPT、BI1EIH，结合自己使用树莓派的体验，一起做了这个RadioPi系统镜像。 如果你也想体验这些乐趣，下载一个试试吧。
 
 
-
 ## 2. RadioPi下载
 
-**中文版下载地址：**[https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA](https://pan.baidu.com/s/17HxJHYbyRwxaK_dh4-24WA)
-<br />**提取码：**`02e7`
-<br/>**SHA-256：**`99ab3ec6125cc07d878746d810a1d74db3db7bada44e5373ae1b7681da3e07f3`
+{% include downloads_20200725.html %}
 
 如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
 
 注意：刚下载的RaidoPi镜像是一个zip压缩包，烧卡之前要先解压缩，得到一个后缀是.img的文件。这个就是RadioPi镜像文件。
 
 
-
 ## 3. RadioPi的特色
 
 RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是有洁癖的工程师，努力把它做的跟官方镜像一样干净，除了HAM常用的软件，别的都没装。
 
-### 3.1 预装的软件
+### 3.1 RadioPi特色功能
+
+{% for features in site.data.features_20200725 %}
+	{%- for feature in features.feature -%}
+- {{ feature.zh }}
+	{%- endfor %}
+{% endfor %}
+
+
+### 3.2 预装的软件
 
 | 软件 | 版本 | 简介 |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares -%}
+{%- for software in site.data.softwares_20200725 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
       {{ description.zh }}
@@ -56,34 +71,20 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 
 这些软件需要你自己完成开机设置，比如与电台的连接、呼号和LOTW账号等等。我们希望RadioPi能满足Ham的核心需求，也希望它尽量稳定，所以一些软件是最新的，一些是次新的。欢迎各位推荐更好用的软件，我们在以后的版本里预装。
 
-**RadioPi还做了：**
 
-- 中文化的界面，预装谷歌拼音输入法。
-- 预装时间同步软件、GPS的驱动。
-- 精简了跟HAM无关的软件。
-- 配置好了CQRLog的数据库，修订了它上传LOTW的Bug。
-- 配置好了SSH、VNC、Avahi服务。
-- 预存了一个叫radiopi的Wi-Fi连接，以便于野外通联。
-
-
-
-### 3.2 RadioPi的默认用户名和密码
+### 3.3 RadioPi的默认用户名和密码
 
 - 用户名：pi
 - 密码：radiopi599
 
 
-
-### 3.3 RadioPi的默认主机名
+### 3.4 RadioPi的默认主机名
 
 - 主机名：radiopi
-
-
 
 RadioPi配置了自动广播主机名的Avahi服务，你可以在支持mDNS协议的其它设备上直接访问radiopi.local找到它。详情请参考《无头操作RadioPi》。
 
 我们把RadioPi设置为开机自动登录到桌面，这是为VNC远程控制做的一个优化。第一次登录后，建议你立刻修改用户pi的密码。
-
 
 
 ## 4. 使用前的准备
@@ -303,7 +304,30 @@ RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安�
 
 
 
-## 9. 安全提示
+## 9. 关于RadioPi的音频
+
+### 9.1 音频输入
+
+正如您所了解的，目前的树莓派电脑都没有音频输入的硬件。所以对于那些没有声卡的电台，比如FT-817，需要另外准备一个USB声卡。电台的收到的声音信号，通过声卡的Line-in或Mic接口输入给RadioPi。RadioPi上的解码软件，比如WSJT-X、Fldigi等，再把这个声音解码。WSJT-X等软件发射信号时，调制后的音频也会从USB声卡直接传递给电台去发射。
+
+### 9.2 音频输出
+
+在默认情况下，树莓派的多个音频设备之间是相互独立的。如果你使用了外置的USB声卡，那么你可能在树莓派的3.5mm音频插孔上，无法同时监听到WSJT-X的声音。尽管这个需求不是那么迫切，我们还是准备了一个解决方案。我们在RadioPi上预装了PulseAudio Preferences。它可以将音频的输出同步到所有的声卡。
+
+- 在RadioPi的开始菜单/首选项中打开PulseAudio Preferences(PulseAudio属性)。
+- 选择 Simultaneous Output(同步输出)。
+- 勾选“在所有本地声卡中为模拟输出添加虚拟(V)输出设备”。
+- 在WSJT-X等软件的“设置/音频”中，将音频输出设备选为“combined”即可。
+
+
+## 时间同步？？？？？？？？
+
+树莓派没有硬件RTC时钟，它使用timedatectl来进行ntp协议的时间同步。
+RadioPi使用chrony替代nptd执行时间同步。在有互联网连接时，chrony可以从ntp时间服务器获取时间。没有互联网时，比如在野外，chrony可以从USB GPS获取时间。
+
+
+
+## 10. 安全提示
 
 - RadioPi上的软件大部分基于Hamlib开源工具库，已经发展了二十年，成功且稳定。但是这些软件目前仍在更新，所以没人保证它们和每一个软件、每一个电台都能有完美的配合。
 - 树莓派的硬件并非专门为射频工况设计，所以使用树莓派控制电台有一定的风险。当你用它和大功率电台、非平衡天馈系统一起工作时，不良的驻波、不佳的平衡与接地，都有可能对树莓派、电台及周边设备带来射频干扰。
@@ -311,9 +335,11 @@ RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安�
 - 所以认真对待平衡、接地、驻波等问题是非常必要的，尤其在远程操作无人值守的电台时更要注意这些问题。
 - 解决这些问题也是玩业余无线电的乐趣之一。
 
+## 11. Popularity Contest
 
+我们想了解在RadioPi上哪些软件是最常被用到的，所以我们在RadioPi上默认安装了Debian的“人气竞赛(Popularity Contest)软件包。该软件包每周会向Debian Popcon项目的中央服务器提交一次RadioPi用户安装的软件包信息，且不包含用户的隐私信息。你也可以访问网站[https://popcon.debian.org](https://popcon.debian.org)了解统计结果。你完全可以自己决定是否退出“人气竞赛”，届时使用以下命令删除这个软件包即可：`sudo apt remove popularity-contest`。
 
-## 10. 使用协议
+## 12. 使用协议
 
 - 下载和使用RadioPi镜像表示你已同意自行承担使用它的风险和责任。
 - 使用RadioPi须遵守创作共享[CC BY-SA (署名-相同方式共享 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)协议。

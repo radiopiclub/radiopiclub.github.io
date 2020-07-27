@@ -1,7 +1,7 @@
 ---
-layout: home
+layout: default
 title: RadioPi Club Home
-permalink: "/zh/index.html"
+permalink: "/zh/releases/image_2020-06-05-radiopi.html"
 language: zh
 ---
 
@@ -20,18 +20,14 @@ language: zh
 
 <div>
 	<h3>下载地址</h3>
-	{% include downloads_20200725.html %}
-
-
-<p><b>特别提示</b>：2020年6月5日发行的中文请参考：<a href="/zh/releases/image_2020-06-05-radiopi.html">20200605中文版版本说明</a>。</p>
-
+	{% include downloads_20200605.html %}
 </div>
 
 
 <div>
 	<h3>RadioPi特色功能：</h3>
 	<ul>
-	  {% for features in site.data.features_20200725 %}
+	  {% for features in site.data.features_20200605 %}
 	  	{% for feature in features.feature %}
 		   <li>{{ feature.zh }}</li>
 		{% endfor %}
@@ -42,7 +38,7 @@ language: zh
 <div>
 	<h3>RadioPi预装的软件：</h3>
 	<ul>
-	  {% for software in site.data.softwares_20200725 %}
+	  {% for software in site.data.softwares_20200605 %}
 		<li><b>{{ software.name }}</b>，{{ software.version }}，
 		    {% for description in software.descriptions %}
 		      {{ description.zh }}
@@ -58,5 +54,5 @@ language: zh
 
 <h2>RadioPi使用指南</h2>
 
-<p>详细使用说明，请参考<a href="/zh/documents-20200725.html">《RadioPi使用说明》</a></p>
+<p>详细使用说明，请参考<a href="/zh/documents-20200605.html">《RadioPi使用说明》</a></p>
 
