@@ -322,11 +322,11 @@ After RadioPi is connected to the Internet:
 
 ### 9.1 Audio-In
 
-As you know, Raspberry Pi does not have any audio-in or line-in hardware. To working with radios without sound card, such as FT-817, you should connect it to a USB sound card, or a USB-CAT interface device. The radio sent audio signal from perpherals to RadioPi. Then, the softwares on RadioPi decode the signal to human readable information. When the software transmit signal, the encoded audio is sent to your radio from those perpherals.
+As you know, Raspberry Pi does not have any audio-in or line-in hardware. To working with radios without sound card, such as FT-817, you should connect it to a USB sound card, or a USB-CAT interface device. The radio sent audio signal from those perpherals to RadioPi. Then, the softwares on RadioPi decode the signal to human readable information. When the software transmit signal, the encoded audio is sent to your radio from those perpherals.
 
 ### 9.2 Audio-Out
 
-By default, Raspberry Pi's audio devices are independent of each other. If you are using a USB sound card to transmit audio, you may not hear this audio from the 3.5mm audio jack, or HDMI output. However, we'd installed PulseAudio Preferences. It could help to make all sound output devices simultaneously.
+By default, Raspberry Pi's audio-out devices are independent of each other. If you are using a USB sound card to transmit audio, you may not hear this sound from the 3.5mm audio jack, or HDMI output. However, we'd installed PulseAudio Preferences. It could help to make all sound output devices simultaneously.
 
 - Click the RadioPi's Applications Menu/Preferences/PulseAudio Preferences.
 - Open the fourth tab: Simultaneous Output.
