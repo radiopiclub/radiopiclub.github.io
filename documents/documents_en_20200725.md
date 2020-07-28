@@ -20,15 +20,14 @@ language: en
 
 ![radiopi-desktop](/img/radiopi-desktop.png)
 
-
 RadioPi is a Hamradio Raspberry Pi OS image. It's optimized for <b>remote control</b> and <b>filed operation</b>. You can flash it into a SD card, and run it on a RPi computer directly.
 
 *(For the convenience of expression, we will refer to the RPi computer running RadioPi image as **"RadioPi"** in short.)*
 
-
 RadioPi can help you to:
 - Control your rig, run FT8, log QSO, and upload to LoTW. 
 - Control your rig@home by your mobile phone, when you take a walk in a park.
+- Try to make QSO with Software Defined Radio and amateur satellites. 
 - Go to field operation without your laptop computer.
 
 
