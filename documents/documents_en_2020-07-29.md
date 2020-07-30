@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi User Guide
-permalink: "/en/documents-20200605.html"
-author: BG6LH
-version: 20200605
+permalink: "/en/documents-2020-07-29.html"
+author: BG6LH, BG1TPT, BI1EIH
+version: 2020-07-29
 language: en
 
 ---
@@ -18,34 +18,45 @@ language: en
 
 ## 1. Introduction
 
-![radiopi-desktop](/img/radiopi-desktop.png)
+![radiopi-desktop](/img/radiopi-desktop-20200725.png)
 
-
-RadioPi is a Hamradio Raspberry Pi OS image. You can flash it into a SD card, and run it on a RPi computer directly.
+RadioPi is a Hamradio Raspberry Pi OS image. It's optimized for <b>remote control</b> and <b>filed operation</b>. You can flash it into a SD card, and run it on a RPi computer directly.
 
 *(For the convenience of expression, we will refer to the RPi computer running RadioPi image as **"RadioPi"** in short.)*
 
+### RadioPi can help to:
 
-RadioPi can help you to:
-- Control your rig, run FT8, log QSO, and upload to LoTW. 
-- Control your rig@home by your mobile phone, when you take a walk in a park.
-- Go to field operation without your laptop computer.
+{% for target in site.data.targets_2020-07-29 %}
+- {{ target | map: page.language }}
+{%- endfor %}
 
 
+## 2. Download
 
-## 2. Features of RadioPi
+{%- include downloads_2020-07-29.html -%}
+
+
+## 3. Features of RadioPi
 
 The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to make it as clean as the official image. 
 
-### 2.1 Softwares on RadioPi
+
+### 3.1 Features
+
+{% for feature in site.data.features_2020-07-29 %}
+- {{ feature | map: page.language }}
+{%- endfor %}
+
+
+### 3.2 Softwares on RadioPi
 
 | Application | Version | Description |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares_20200605 -%}
+{%- for software in site.data.softwares_2020-07-29 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
-      {{ description.en }}
+      {{ description | map: page.language }}
     {%- endfor -%}
 |
 {% endfor %}
@@ -54,24 +65,15 @@ The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to ma
 You need to complete some the power-on settings by yourself, such as the connection with your rig, call sign and LoTW account and so on. We hope that RadioPi can meet Ham's requirement as stable as possible, so some software is up to date, some are stable. You are welcome to recommend better software, we will pre-install it in future radiopi versions.
 
 
-### 2.2 Configuration
 
-{% for features in site.data.features_20200605 %}
-	{%- for feature in features.feature -%}
-- {{ feature.en }}
-	{%- endfor %}
-{% endfor %}
-
-
-
-### 2.3 Default username and password of RadioPi
+### 3.3 Default username and password of RadioPi
 
 - username: pi
 - password: radiopi599
 
 Those are username and passwords login to SSH, VNC, or desktop.
 
-### 2.4 Default host name of RadioPi
+### 3.4 Default host name of RadioPi
 
 - hostname: radiopi
 
@@ -79,11 +81,6 @@ Those are username and passwords login to SSH, VNC, or desktop.
 RadioPi is configured with the Avahi service that automatically broadcasts hostnames in LAN networking. You can find your RadioPi by directly accessing radiopi.local on other devices that support the mDNS protocol.
 
 RadioPi is configured to automatically login to the desktop after booting, which is an optimization for VNC remote control. After your first login, it is recommended that you change the password of user pi.
-
-
-## 3. Download
-
-{% include downloads_20200605.html %}
 
 
 ## 4. Preparation before use
@@ -317,7 +314,24 @@ After RadioPi is connected to the Internet:
 ![a go-pack of RadioPi and YEASU FT-818](/img/ft818_gopack.jpg)
 
 
-## 9. Safety tips
+
+## 9. About RadioPi's audio
+
+### 9.1 Audio-In
+
+As you know, Raspberry Pi does not have any audio-in or line-in hardware. To working with radios without sound card, such as FT-817, you should connect it to a USB sound card, or a USB-CAT interface device. The radio sent audio signal from those perpherals to RadioPi. Then, the softwares on RadioPi decode the signal to human readable information. When the software transmit signal, the encoded audio is sent to your radio from those perpherals.
+
+### 9.2 Audio-Out
+
+By default, Raspberry Pi's audio-out devices are independent of each other. If you are using a USB sound card to transmit audio, you may not hear this sound from the 3.5mm audio jack, or HDMI output. However, we'd installed PulseAudio Preferences. It could help to make all sound output devices simultaneously.
+
+- Click the RadioPi's Applications Menu/Preferences/PulseAudio Preferences.
+- Open the fourth tab: Simultaneous Output.
+- Check the "Add virtual output device for simultaneous output on all local sound cards".
+- Restart your software such as WSJT-X, choose the audio output to "combined"
+
+
+## 10. Safety tips
 
 - Most of the applications on RadioPi are based on "Hamlib". Which has been developed for two decades. It is successful and stable. But these applications are still being updated. So no one guarantees they will work perfectly with every application and every rig.
 - The hardware of Raspberry Pi is not designed for RF conditions specifically. So using the Raspberry Pi to control radio devices has certain risks. When you use it to work with a high-power, or unbalanced antenna and feedline, the poor SWR, poor balance, insufficient counterpoise can all cause RFI to your Raspberry Pi, your rigs and peripherals.
@@ -326,7 +340,12 @@ After RadioPi is connected to the Internet:
 - Solving these problems is also one of the fun of hamradio.
 
 
-## 10. Agreement
+## 11. Popularity Contest
+
+We Hope to know which packages are used commonly on RadioPi. So we installed Debian Popcon (Popularity Contest) package by default. The Popcon package submits the softwares information on RadioPi to the central server of Popcon project, once per week, dose not contain any user's privacy. You can also find the result by visiting [https://popcon.debian.org](https://popcon.debian.org). You can decide to quit popcon project, by removing the package using the following command: `sudo apt remove popularity-contest`.
+
+
+## 12. Agreement
 
 - Downloading and using the RadioPi image means that you have agreed to take the risks and responsibilities of using it by yourself.
 - RadioPi is released under a Creative Commons [CC BY-SA (Attribution-ShareAlike 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.

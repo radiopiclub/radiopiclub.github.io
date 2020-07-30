@@ -12,26 +12,23 @@ language: en
 <div>
 	<h3>RadioPi is desgined to</h3>
 	<ul>
-		<li>Control your rig, run FT8, log QSO, and upload to LoTW. </li>
-		<li>Control your rig at home, when you take a walk in a park. </li>
-		<li>Try to make QSO with Software Defined Radio and amateur satellites. </li>
-		<li>Go to field operation without your laptop computer. </li>
+	{% for target in site.data.targets_2020-07-29 %}
+			<li>{{ target | map: page.language }}</li>
+	{% endfor %}
 	</ul>
 </div>
 
 
 <div>
 	<h3>Downloads</h3>
-	{% include downloads_20200725.html %}
+	{% include downloads_2020-07-29.html %}
 </div>
 
 <div>
 	<h3>Features of RadioPi</h3>
 	<ul>
-	  {% for features in site.data.features_20200725 %}
-	  	{% for feature in features.feature %}
-		   <li>{{ feature.en }}</li>
-		{% endfor %}
+	  {% for feature in site.data.features_2020-07-29 %}
+		   <li>{{ feature | map: page.language }}</li>
 	  {% endfor %}
 	</ul>
 </div>
@@ -39,10 +36,10 @@ language: en
 <div>
 	<h3>Software on RadioPi</h3>
 	<ul>
-	  {% for software in site.data.softwares_20200725 %}
+	  {% for software in site.data.softwares_2020-07-29 %}
 		<li><b>{{ software.name }}</b>, {{ software.version }},
 		    {% for description in software.descriptions %}
-		      <i>{{ description.en }}</i>
+		      <i>{{ description | map: page.language }}</i>
 		    {% endfor %}
 		</li>
 	  {% endfor %}
@@ -51,5 +48,5 @@ language: en
 
 <h2>RadioPi User Guide</h2>
 
-<p>For more infomation, Please read <a href="/en/documents-20200725.html"> RadioPi User Guide</a></p>
+<p>For more infomation, Please read <a href="/en/documents-2020-07-29.html"> RadioPi User Guide</a></p>
 

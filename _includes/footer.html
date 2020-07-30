@@ -3,10 +3,10 @@
       	<br />
       	<hr />
         <p><small>
-        	RadioPi is released under a Creative Commons
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA (Attribution-ShareAlike 4.0)</a>
-          license.
-        	<br />
-        	使用RadioPi须遵守创作共享<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA (署名-相同方式共享 4.0)</a>协议。
+          {% if page.language == "zh" %}
+            使用RadioPi须遵守创作共享<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA (署名-相同方式共享 4.0)</a>协议。
+        	{% else %}
+            RadioPi is released under a Creative Commons <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA (Attribution-ShareAlike 4.0)</a> license.
+          {% endif %}
         </small></p>
       </footer>

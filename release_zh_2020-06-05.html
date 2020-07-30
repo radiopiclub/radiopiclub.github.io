@@ -12,36 +12,34 @@ language: zh
 <div>
 	<h3>RadioPi能做：</h3>
 	<ul>
-		<li>控制电台，玩FT8，记通联日志，上传LOTW挣DXCC积分。</li>
-		<li>一边在公园遛弯儿，一边用手机遥控家里电台。</li>
-		<li>去野外通联不用带笔记本电脑了。</li>
+	{% for target in site.data.targets_2020-06-05 %}
+			<li>{{ target | map: page.language }}</li>
+	{% endfor %}
 	</ul>
 </div>
 
 <div>
 	<h3>下载地址</h3>
-	{% include downloads_20200605.html %}
+	{% include downloads_2020-06-05.html %}
 </div>
 
 
 <div>
 	<h3>RadioPi特色功能：</h3>
 	<ul>
-	  {% for features in site.data.features_20200605 %}
-	  	{% for feature in features.feature %}
-		   <li>{{ feature.zh }}</li>
+	  {% for feature in site.data.features_2020-06-05 %}
+		   <li>{{ feature | map: page.language }}</li>
 		{% endfor %}
-	  {% endfor %}
 	</ul>
 </div>
 
 <div>
 	<h3>RadioPi预装的软件：</h3>
 	<ul>
-	  {% for software in site.data.softwares_20200605 %}
+	  {% for software in site.data.softwares_2020-06-05 %}
 		<li><b>{{ software.name }}</b>，{{ software.version }}，
 		    {% for description in software.descriptions %}
-		      {{ description.zh }}
+		      {{ description | map: page.language }}
 		    {% endfor %}
 		</li>
 	  {% endfor %}
@@ -54,5 +52,5 @@ language: zh
 
 <h2>RadioPi使用指南</h2>
 
-<p>详细使用说明，请参考<a href="/zh/documents-20200605.html">《RadioPi使用说明》</a></p>
+<p>详细使用说明，请参考<a href="/zh/documents-2020-06-05.html">《RadioPi使用说明》</a></p>
 

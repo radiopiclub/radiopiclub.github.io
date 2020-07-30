@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi使用说明
-permalink: "/zh/documents-20200725.html"
-author: BG6LH
-version: 20200725
+permalink: "/zh/documents-2020-07-29.html"
+author: BG6LH, BG1TPT, BI1EIH
+version: 2020-07-29
 language: zh
 
 ---
@@ -25,18 +25,16 @@ RadioPi是一个配置好了的树莓派操作系统懒人包，安装了常用�
 
 
 ### RadioPi能干这些事
-
-- 控制电台，玩FT8，记通联日志，上传LOTW挣DXCC积分。
-- 一边在公园遛弯儿，一边用手机遥控家里电台。
-- 尝试一下软件无线电和业余卫星的QSO。
-- 去野外通联不用带笔记本电脑了。
+{% for target in site.data.targets_2020-07-29 %}
+- {{ target | map: page.language }}
+{%- endfor %}
 
 我们三个搞互联网的HAM，BG6LH、BG1TPT、BI1EIH，结合自己使用树莓派的体验，一起做了这个RadioPi系统镜像。 如果你也想体验这些乐趣，下载一个试试吧。
 
 
 ## 2. RadioPi下载
 
-{% include downloads_20200725.html %}
+{%- include downloads_2020-07-29.html -%}
 
 如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
 
@@ -49,11 +47,9 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 
 ### 3.1 RadioPi特色功能
 
-{% for features in site.data.features_20200725 %}
-	{%- for feature in features.feature -%}
-- {{ feature.zh }}
-	{%- endfor %}
-{% endfor %}
+{% for feature in site.data.features_2020-07-29 %}
+- {{ feature | map: page.language }}
+{%- endfor %}
 
 
 ### 3.2 预装的软件
@@ -61,10 +57,10 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 | 软件 | 版本 | 简介 |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares_20200725 -%}
+{%- for software in site.data.softwares_2020-07-29 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
-      {{ description.zh }}
+      {{ description | map: page.language }}
     {%- endfor -%}
 |
 {% endfor %}

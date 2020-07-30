@@ -10,43 +10,40 @@ language: zh
 <p>RadioPi是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件、SDR软件、卫星追踪软，并且针对<b>“远程控制”</b>和<b>“野外操作”</b>做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。</p>
 
 <div>
-	<h3>RadioPi能做：</h3>
+	<h3>RadioPi的设计目标</h3>
 	<ul>
-		<li>控制电台，玩FT8，记通联日志，上传LOTW挣DXCC积分。</li>
-		<li>一边在公园遛弯儿，一边用手机遥控家里电台。</li>
-		<li>尝试一下软件无线电和业余卫星的QSO。</li>
-		<li>去野外通联不用带笔记本电脑了。</li>
+	{% for target in site.data.targets_2020-07-29 %}
+		<li>{{ target | map: page.language }}</li>
+	{% endfor %}
 	</ul>
 </div>
 
 <div>
 	<h3>下载地址</h3>
-	{% include downloads_20200725.html %}
+	{% include downloads_2020-07-29.html %}
 
 
-<p><b>特别提示</b>：2020年6月5日发行的中文请参考：<a href="/zh/releases/image_2020-06-05-radiopi.html">20200605中文版版本说明</a>。</p>
+<p><b>特别提示</b>：2020年6月5日发行的中文版，请参考：<a href="/zh/releases/image_2020-06-05-radiopi.html">2020-06-05版本说明</a>。</p>
 
 </div>
 
 
 <div>
-	<h3>RadioPi特色功能：</h3>
+	<h3>RadioPi特色功能</h3>
 	<ul>
-	  {% for features in site.data.features_20200725 %}
-	  	{% for feature in features.feature %}
-		   <li>{{ feature.zh }}</li>
-		{% endfor %}
+	  {% for feature in site.data.features_2020-07-29 %}
+		   <li>{{ feature | map: page.language }}</li>
 	  {% endfor %}
 	</ul>
 </div>
 
 <div>
-	<h3>RadioPi预装的软件：</h3>
+	<h3>RadioPi预装的软件</h3>
 	<ul>
-	  {% for software in site.data.softwares_20200725 %}
+	  {% for software in site.data.softwares_2020-07-29 %}
 		<li><b>{{ software.name }}</b>，{{ software.version }}，
 		    {% for description in software.descriptions %}
-		      {{ description.zh }}
+		      {{ description | map: page.language }}
 		    {% endfor %}
 		</li>
 	  {% endfor %}
@@ -59,5 +56,5 @@ language: zh
 
 <h2>RadioPi使用指南</h2>
 
-<p>详细使用说明，请参考<a href="/zh/documents-20200725.html">《RadioPi使用说明》</a></p>
+<p>详细使用说明，请参考<a href="/zh/documents-2020-07-29.html">《RadioPi使用说明》</a></p>
 

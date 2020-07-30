@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi使用说明
-permalink: "/zh/documents-20200605.html"
+permalink: "/zh/documents-2020-06-05.html"
 author: BG6LH
-version: 20200605
+version: 2020-06-05
 language: zh
 
 ---
@@ -26,9 +26,11 @@ language: zh
 
 ### RadioPi能干这些事
 
-- 控制电台，玩FT8，记通联日志，上传LOTW挣DXCC积分。
-- 一边在公园遛弯儿，一边用手机遥控家里电台。
-- 去野外通联不用带笔记本电脑了。
+RadioPi can help you to:
+{% for target in site.data.targets_2020-06-05 %}
+- {{ target | map: page.language }}
+{%- endfor %}
+
 
 我们三个搞互联网的HAM，BG6LH、BG1TPT、BI1EIH，结合自己使用树莓派的体验，一起做了这个RadioPi系统镜像。 如果你也想体验这些乐趣，下载一个试试吧。
 
@@ -43,10 +45,10 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 | 软件 | 版本 | 简介 |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares_20200605 -%}
+{%- for software in site.data.softwares_2020-06-05 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
-      {{ description.zh }}
+      {{ description | map: page.language }}
     {%- endfor -%}
 |
 {% endfor %}
@@ -56,11 +58,9 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 
 **RadioPi还做了：**
 
-{% for features in site.data.features_20200605 %}
-	{%- for feature in features.feature -%}
-- {{ feature.zh }}
-	{%- endfor %}
-{% endfor %}
+{% for feature in site.data.features_2020-06-05 %}
+- {{ feature | map: page.language }}
+{%- endfor %}
 
 
 ### 2.2 RadioPi的默认用户名和密码
@@ -83,7 +83,7 @@ RadioPi配置了自动广播主机名的Avahi服务，你可以在支持mDNS协�
 
 ## 3. RadioPi下载
 
-{% include downloads_20200605.html %}
+{% include downloads_2020-06-05.html %}
 
 如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
 
