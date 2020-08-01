@@ -1,9 +1,9 @@
 
-{% assign image_name = "image_2020-07-29-radiopi.zip" %}
-{% assign fileszie = "1.28GB" %}
-{% assign shasum256 = "8233bd8d1bdd90750f2f9f7fb828318b18a0b4c5474e4fc73d5583b674cb9267" %}
+{% assign image_name = "image_2020-08-01-radiopi.zip" %}
+{% assign fileszie = "1.26GB" %}
+{% assign shasum256 = "d949ed21097864aaa6bed4d453d22415e5a25e2479fd835f8398e9dbc0fd6ec4" %}
 
-{% assign download_git_url = "https://github.com/razor/radiopi/blob/master/images/image_2020-07-29-radiopi.zip" %}
+{% assign download_url = "https://downloads.radiopi.club/image_2020-08-01-radiopi.zip" %}
 
 {% assign download_baidu_url = "https://pan.baidu.com/s/1RdeLioiFB9-eHlj42UE-GA" %}
 {% assign download_baidu_extcode = "5v9r" %}
@@ -15,7 +15,7 @@
 {% if page.language == "zh" %}
 
 <dl>
-<dd>镜像文件：<a href="{{ download_git_url }}">{{ image_name }}</a></dd>
+<dd>镜像文件：<a href="{{ download_url }}">{{ image_name }}</a></dd>
 <dd>大小：{{ fileszie }}</dd>
 <dd>SHA-256：{{ shasum256 }}</dd>
 </dl>
@@ -31,7 +31,7 @@
 {% else %}
 
 <dl>
-<dd>Image file: <a href="{{ download_git_url }}">{{ image_name }}</a></dd>
+<dd>Image file: <a href="{{ download_url }}">{{ image_name }}</a></dd>
 <dd>Size: {{ fileszie }}</dd>
 <dd>SHA-256: {{ shasum256 }}</dd>
 </dl>

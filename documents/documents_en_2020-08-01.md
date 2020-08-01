@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi User Guide
-permalink: "/en/documents-2020-07-29.html"
+permalink: "/en/documents-2020-08-01.html"
 author: BG6LH, BG1TPT, BI1EIH
-version: 2020-07-29
+version: 2020-08-01
 language: en
 
 ---
@@ -26,14 +26,14 @@ RadioPi is a Hamradio Raspberry Pi OS image. It's optimized for <b>remote contro
 
 ### RadioPi can help to:
 
-{% for target in site.data.targets_2020-07-29 %}
+{% for target in site.data.targets_2020-08-01 %}
 - {{ target | map: page.language }}
 {%- endfor %}
 
 
 ## 2. Download
 
-{%- include downloads_2020-07-29.html -%}
+{%- include downloads_2020-08-01.html -%}
 
 
 ## 3. Features of RadioPi
@@ -43,7 +43,7 @@ The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to ma
 
 ### 3.1 Features
 
-{% for feature in site.data.features_2020-07-29 %}
+{% for feature in site.data.features_2020-08-01 %}
 - {{ feature | map: page.language }}
 {%- endfor %}
 
@@ -53,7 +53,7 @@ The RadioPi image is a redistribution based on the Raspberry Pi OS. We try to ma
 | Application | Version | Description |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares_2020-07-29 -%}
+{%- for software in site.data.softwares_2020-08-01 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
       {{ description | map: page.language }}

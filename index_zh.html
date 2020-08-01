@@ -12,7 +12,7 @@ language: zh
 <div>
 	<h3>RadioPi的设计目标</h3>
 	<ul>
-	{% for target in site.data.targets_2020-07-29 %}
+	{% for target in site.data.targets_2020-08-01 %}
 		<li>{{ target | map: page.language }}</li>
 	{% endfor %}
 	</ul>
@@ -20,7 +20,7 @@ language: zh
 
 <div>
 	<h3>下载地址</h3>
-	{% include downloads_2020-07-29.html %}
+	{% include downloads_2020-08-01.html %}
 
 
 <p><b>特别提示</b>：2020年6月5日发行的中文版，请参考：<a href="/zh/releases/image_2020-06-05-radiopi.html">2020-06-05版本说明</a>。</p>
@@ -31,7 +31,7 @@ language: zh
 <div>
 	<h3>RadioPi特色功能</h3>
 	<ul>
-	  {% for feature in site.data.features_2020-07-29 %}
+	  {% for feature in site.data.features_2020-08-01 %}
 		   <li>{{ feature | map: page.language }}</li>
 	  {% endfor %}
 	</ul>
@@ -40,7 +40,7 @@ language: zh
 <div>
 	<h3>RadioPi预装的软件</h3>
 	<ul>
-	  {% for software in site.data.softwares_2020-07-29 %}
+	  {% for software in site.data.softwares_2020-08-01 %}
 		<li><b>{{ software.name }}</b>，{{ software.version }}，
 		    {% for description in software.descriptions %}
 		      {{ description | map: page.language }}
@@ -56,5 +56,5 @@ language: zh
 
 <h2>RadioPi使用指南</h2>
 
-<p>详细使用说明，请参考<a href="/zh/documents-2020-07-29.html">《RadioPi使用说明》</a></p>
+<p>详细使用说明，请参考<a href="/zh/documents-2020-08-01.html">《RadioPi使用说明》</a></p>
 

@@ -12,7 +12,7 @@ language: en
 <div>
 	<h3>RadioPi is desgined to</h3>
 	<ul>
-	{% for target in site.data.targets_2020-07-29 %}
+	{% for target in site.data.targets_2020-08-01 %}
 			<li>{{ target | map: page.language }}</li>
 	{% endfor %}
 	</ul>
@@ -21,13 +21,13 @@ language: en
 
 <div>
 	<h3>Downloads</h3>
-	{% include downloads_2020-07-29.html %}
+	{% include downloads_2020-08-01.html %}
 </div>
 
 <div>
 	<h3>Features of RadioPi</h3>
 	<ul>
-	  {% for feature in site.data.features_2020-07-29 %}
+	  {% for feature in site.data.features_2020-08-01 %}
 		   <li>{{ feature | map: page.language }}</li>
 	  {% endfor %}
 	</ul>
@@ -36,7 +36,7 @@ language: en
 <div>
 	<h3>Software on RadioPi</h3>
 	<ul>
-	  {% for software in site.data.softwares_2020-07-29 %}
+	  {% for software in site.data.softwares_2020-08-01 %}
 		<li><b>{{ software.name }}</b>, {{ software.version }},
 		    {% for description in software.descriptions %}
 		      <i>{{ description | map: page.language }}</i>
@@ -48,5 +48,5 @@ language: en
 
 <h2>RadioPi User Guide</h2>
 
-<p>For more infomation, Please read <a href="/en/documents-2020-07-29.html"> RadioPi User Guide</a></p>
+<p>For more infomation, Please read <a href="/en/documents-2020-08-01.html"> RadioPi User Guide</a></p>
 

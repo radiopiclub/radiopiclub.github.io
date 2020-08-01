@@ -1,9 +1,9 @@
 ---
 layout: document
 title: RadioPi使用说明
-permalink: "/zh/documents-2020-07-29.html"
+permalink: "/zh/documents-2020-08-01.html"
 author: BG6LH, BG1TPT, BI1EIH
-version: 2020-07-29
+version: 2020-08-01
 language: zh
 
 ---
@@ -25,7 +25,7 @@ RadioPi是一个配置好了的树莓派操作系统懒人包，安装了常用�
 
 
 ### RadioPi能干这些事
-{% for target in site.data.targets_2020-07-29 %}
+{% for target in site.data.targets_2020-08-01 %}
 - {{ target | map: page.language }}
 {%- endfor %}
 
@@ -34,7 +34,7 @@ RadioPi是一个配置好了的树莓派操作系统懒人包，安装了常用�
 
 ## 2. RadioPi下载
 
-{%- include downloads_2020-07-29.html -%}
+{%- include downloads_2020-08-01.html -%}
 
 如果你了解SHA校验，可以比对一下校验码，确保下载的文件准确无误。
 
@@ -47,7 +47,7 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 
 ### 3.1 RadioPi特色功能
 
-{% for feature in site.data.features_2020-07-29 %}
+{% for feature in site.data.features_2020-08-01 %}
 - {{ feature | map: page.language }}
 {%- endfor %}
 
@@ -57,7 +57,7 @@ RadioPi镜像是基于树莓派官方操作系统的再发布版本。我们是�
 | 软件 | 版本 | 简介 |
 | ---- | ---- | ---- |
 {{ "" }}
-{%- for software in site.data.softwares_2020-07-29 -%}
+{%- for software in site.data.softwares_2020-08-01 -%}
 | {{ software.name }} | {{ software.version }} |
     {%- for description in software.descriptions -%}
       {{ description | map: page.language }}
