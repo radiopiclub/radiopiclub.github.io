@@ -327,7 +327,7 @@ RadioPi联网之后，iPhone可以直接用VNC Viewer访问radiopi.local，安�
 
 ## 11. Popularity Contest
 
-我们想了解在RadioPi上哪些软件是最常被用到的，所以我们在RadioPi上默认安装了Debian的“人气竞赛(Popularity Contest)软件包。该软件包每周会向Debian Popcon项目的中央服务器提交一次RadioPi用户安装的软件包信息，且不包含用户的隐私信息。你也可以访问网站[https://popcon.debian.org](https://popcon.debian.org)了解统计结果。你完全可以自己决定是否退出“人气竞赛”，届时使用以下命令删除这个软件包即可：`sudo apt remove popularity-contest`。
+我们想了解在RadioPi上哪些软件是最常被用到的，所以我们在RadioPi上默认安装了Debian的“人气竞赛(Popularity Contest)软件包。该软件包每周会向Debian Popcon项目的中央服务器提交一次RadioPi用户安装的软件包信息，且不包含用户的隐私信息。你也可以访问网站[https://popcon.debian.org](https://popcon.debian.org)了解统计结果。你完全可以自己决定是否退出“人气竞赛”，执行以下命令：`sudo dpkg-reconfigure popularity-contest`，在出来的界面中，选择`No`即可。
 
 ## 12. 使用协议
 

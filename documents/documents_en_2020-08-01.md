@@ -342,7 +342,7 @@ By default, Raspberry Pi's audio-out devices are independent of each other. If y
 
 ## 11. Popularity Contest
 
-We Hope to know which packages are used commonly on RadioPi. So we installed Debian Popcon (Popularity Contest) package by default. The Popcon package submits the softwares information on RadioPi to the central server of Popcon project, once per week, dose not contain any user's privacy. You can also find the result by visiting [https://popcon.debian.org](https://popcon.debian.org). You can decide to quit popcon project, by removing the package using the following command: `sudo apt remove popularity-contest`.
+We Hope to know which packages are used commonly on RadioPi. So we installed Debian Popcon (Popularity Contest) package by default. The Popcon package submits the softwares information on RadioPi to the central server of Popcon project, once per week, dose not contain any user's privacy. You can also find the result by visiting [https://popcon.debian.org](https://popcon.debian.org). You can decide to quit popcon project, by using the following command: `sudo dpkg-reconfigure popularity-contest` and type `No`.
 
 
 ## 12. Agreement
