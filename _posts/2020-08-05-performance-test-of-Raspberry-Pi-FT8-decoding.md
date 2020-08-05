@@ -103,7 +103,6 @@ The following is a summary of the results.
 (the red words "秒" is "Second" in Chinese.)
 
 
-
 ![Summary of FT8 decoding performance of each model (unit: second)](/img/table_rpi_ft8_decode.png)
 <small>Above table: Summary of FT8 decoding performance of each model (unit: second), "21" In the last column means there are 21 calls are decoded when deep decoding the single segment.</small>  
 
