@@ -6,6 +6,7 @@
 /*** basic theme remix ***/
 
 body {
+  color:#595959;
   padding-top: 0;
   margin-top: 0;
   font-size: 14px;
@@ -15,13 +16,13 @@ body {
 
 a:hover, a:focus {
   color:#000;
-  font-weight: normal;
   text-decoration: underline;
 }
 
 b {
   color:#494949;
 }
+
 
 /*** Headline Style ***/
 
@@ -57,6 +58,9 @@ header {
 }
 
 code, pre {
+    font-size: 0.9em;
+    color: #d62323;
+    background-color: #f6f8fa;
 }
 
 /*** Site header ***/
