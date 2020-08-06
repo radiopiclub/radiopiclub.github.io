@@ -30,7 +30,7 @@ Let's start with the conclusion:
 A series of dedicated amateur radio communication protocols such as JT65 and FT8 invented by Professor Joe Taylor, through a series of complex information compression, redundancy, error correction, analysis and prediction, to achieve reliable communication on weak signals on high-noise links. Approaching the theoretical limit of Shannon's theorem. The complex algorithm of this superior mode determines that it relies more heavily on computing performance than traditional digital modes such as RTTY/AFSK/PSK31.  
 <small>{ Above is translated by Google Translate from our Chinese articale }</small>
 
-As you know, a full FT8 RX/TX cycle is 30 seconds, one of 15 seconds is the receiving and the other 15 seconds is the transmitting. The actual signal carrier time in each cycle is 12.6 seconds. 
+As you know, a full FT8 RX/TX cycle is 30 seconds, one of 15 seconds is the receiving and the other 15 seconds is the transmitting. The actual signal carrier time in each cycle is about 12 ~ 13 seconds. 
 
 In the case of normal RX/TX, the decoding starts at the end of the 12.6 seconds of carrier. There is about 2.4 seconds to decode and make preparations for the next 15 seconds to transmission.
 
