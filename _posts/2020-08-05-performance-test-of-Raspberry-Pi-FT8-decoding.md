@@ -6,17 +6,17 @@ language: en
 tags: RadioPi RPi FT8
 ---
 
-After we launched the first version of RadoPi in Chinese, many OMs would have such a question. Can the performance of a small Raspberry Pi meet the FT8 QSQ? For this reason, we designed a test as close as the actual scene , and used the same data to make a comparison between different versions of RPis and PCs.
+After we launched the first version of RadoPi, many OMs would have such a question: Can the performance of a small Raspberry Pi meet the FT8 QSO? For this reason, we designed a test as close as the actual scene , and used the same data to make a comparison between different versions of RPis and PCs.
 
 
-Let me start with the conclusion:
+Let's start with the conclusion:
 
 - Fixed/remote/QRO: 
-    - Raspberry Pi 4B 2G is preferred
+    - Raspberry Pi 4B 2G is preferred.
     - It can basically guarantee normal communication with deep decoding.
     - However, when there are many parallel signals, your QSO partner may need to repeat tx multiple times.
 - Portable/QRP:
-    - At least Raspberry Pi 3B should be used,
+    - At least Raspberry Pi 3B should be used.
     - Without deep decoding (ignoring weak signals), it can basically communicate normally when there are less than 10 parallel signals.
     - When there are many parallel signals, your QSO partner may need to repeat tx multiple times.
 - SWL:
@@ -42,10 +42,7 @@ Therefore, to achieve a relatively normal communication, the decoding of most si
 
 In order to have a stable benchmark, we have selected 12 signal segments recorded by WSJT-X that are actually received and distributed at different times in a day, all of which are .wav files. The FT8 signals contained in each file range from 3 to 21 (receiving equipment is IC-7300, filter bandwidth 3.2kHz, a 22.4 meters long wire antenna, 20m band), using WSJT-X 2.2.2 built-in jt9 decoding Engine (consistent with the background call of the WSJT-X‘s GUI).
 
-Each kind of hardware runs the following two test cases.
-
-
-
+Each model of hardwares runs the following two test cases.  
 
 ### Case 1. Normal Decode, the average time to decode all 12 signal segments:
 
@@ -94,17 +91,16 @@ Then, deep decode the signal segment 200614_153000.wav:
 ## Summary of test results:
 
 
-We tested the two cases in:
-- 5 models of Raspberry Pi.
-- 2 Thinkpad models, as reference.
+We tested the above cases in:
+- 5 Raspberry Pi.
+- 2 Thinkpad, as reference.
 
 
-The following is a summary of the results. 
-(the red words "秒" is "Second" in Chinese.)
+The following is a summary of the results (the red words "秒", pronounce "miǎo", is "Second" in Chinese.) . "21个" In the last column means there are 21 calls were decoded when deep decoding the single segment.
 
 
 ![Summary of FT8 decoding performance of each model (unit: second)](/img/table_rpi_ft8_decode.png)
-<small>Above table: Summary of FT8 decoding performance of each model (unit: second), "21" In the last column means there are 21 calls are decoded when deep decoding the single segment.</small>  
+<small>Above table: Summary of FT8 decoding performance of each model (unit: second).</small>  
 
 
 There is a Chart of the 7 computers decoding time.
