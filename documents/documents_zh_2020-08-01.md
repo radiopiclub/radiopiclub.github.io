@@ -17,7 +17,7 @@ language: zh
 
 ## 1. RadioPi简介
 
-![radiopi-desktop](/img/radiopi-desktop-20200725.png)
+![radiopi-desktop](/img/radiopi-desktop-2020-08-01.png)
 
 RadioPi是一个配置好了的树莓派操作系统懒人包，安装了常用的HAM软件、SDR软件、卫星追踪软，并且针对<b>“远程控制”</b>和<b>“野外操作”</b>做了优化。你只要下载了它，烧个SD卡，往树莓派里一插，开机就能用。
 

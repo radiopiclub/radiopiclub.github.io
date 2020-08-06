@@ -19,7 +19,7 @@ language: en
 
 ## 1. Introduction
 
-![radiopi-desktop](/img/radiopi-desktop-20200725.png)
+![radiopi-desktop](/img/radiopi-desktop-2020-08-01.png)
 
 RadioPi is a Hamradio Raspberry Pi OS image. It's optimized for <b>remote control</b> and <b>field operation</b>. You can flash it into a SD card, and run it on a RPi computer directly.
 
