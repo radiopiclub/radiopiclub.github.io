@@ -21,7 +21,7 @@ You are still welcome to communicate with us on Github!
 依旧欢迎你在Github上与我们保持沟通！
 
 
-[https://github.com/radiopiclub/radiopiclub](https://radiopiclub.github.io/)
+[https://radiopiclub.github.io](https://radiopiclub.github.io/)
 
 73!
 
