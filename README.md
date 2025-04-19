@@ -25,6 +25,6 @@ You are still welcome to communicate with us on Github!
 
 73!
 
-@BG6LH @razor(BG1TPT) @sgub(BI1EIH)
+BG6LH [BG1TPT](https://github.com/razor) [BI1EIH](https://github.com/sgub)
 
 2024-5-16
