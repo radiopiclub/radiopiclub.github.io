@@ -21,10 +21,10 @@ You are still welcome to communicate with us on Github!
 依旧欢迎你在Github上与我们保持沟通！
 
 
-<p><a href="https://github.com/radiopiclub/radiopiclub">https://github.com/radiopiclub/radiopiclub</a></p>
+[https://github.com/radiopiclub/radiopiclub](https://radiopiclub.github.io/)
 
-<p>73!</p>
+73!
 
-<p>BG6LH BG1TPT BI1EIH</p>
+@BG6LH @razor(BG1TPT) @sgub(BI1EIH)
 
-<p>2024-5-16</p>
+2024-5-16
